@@ -1,0 +1,19 @@
+{
+  "name": "udp-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dgram": "^1.0.1",
+    "nodemon": "^2.0.19"
+  },
+  "engines": {
+    "node": "16.14.0"
+  }
+}
