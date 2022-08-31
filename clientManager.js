@@ -46,7 +46,7 @@ class ClientManager{
     
     this.clients = this.clients.filter(client=>{
       const diff = new Date().getTime() - client.time.getTime();
-      if(diff <= 3000) return true;
+      if(diff <= 1000) return true;
       console.log(`User ${client.id} was disconnected.`);
       return false;
     })
