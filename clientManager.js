@@ -45,6 +45,11 @@ class ClientManager{
     }
     
     this.clients = this.clients.filter(client=>{
+      const msg = new Buffer.from(`UID:${client.id}`)
+      this.server.send(msg, 0, msg.length, port, address, ()=>{
+        console.log(`uid was sent to user ${client.id}`);
+      });
+
       const diff = new Date().getTime() - client.time.getTime();
       if(diff <= 1000) return true;
       console.log(`User ${client.id} was disconnected.`);
@@ -67,7 +72,7 @@ class ClientManager{
    * @param {string} uid 
    * @param {string} value
    */
-  sendTo(uid, value){
+  sendControllerInfoTo(uid, value){
     const uidToLower = uid.toLowerCase();
     this.clients.forEach(client=>{
       if(client.id === uidToLower){

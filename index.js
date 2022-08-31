@@ -18,7 +18,7 @@ server.on('message', (msg, senderInfo) => {
   }
   switch(params[0]){
     case 'Controller':
-      clientManager.sendTo(params[1], params.slice(2).join(' '));
+      clientManager.sendControllerInfoTo(params[1], params.slice(2).join(' '));
       break;
   }
 
