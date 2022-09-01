@@ -46,7 +46,7 @@ class ClientManager{
     
     this.clients = this.clients.filter(client=>{
       const msg = new Buffer.from(`UID:${client.id}`)
-      this.server.send(msg, 0, msg.length, port, address, ()=>{
+      this.server.send(msg, 0, msg.length, client.port, client.address, ()=>{
         console.log(`uid was sent to user ${client.id}`);
       });
 
